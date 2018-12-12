@@ -1,4 +1,5 @@
 # rename 'X' and 'Y' to avoid confusion
+From Forest_File_Predition import load_data.py
 original_df.rename(index=str, columns={"X": "x_coord", "Y": "y_coord"}, inplace=True)
 
 # In http://archive.ics.uci.edu/ml/machine-learning-databases/forest-fires/forestfires.names,
