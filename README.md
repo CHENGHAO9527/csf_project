@@ -1,6 +1,6 @@
 # Final Project for Computer Science Foundation 
 
-## Group Member: Chen Miao; Jiajun Wu; Hao Chen
+## Group Member: Cheng Miao; Jiajun Wu; Hao Cheng
 
 Building the  package to get Forest Fires Dataset ready for machine learning modeling for different frameworks.
 Datasets: http://archive.ics.uci.edu/ml/datasets/Forest+Fires
