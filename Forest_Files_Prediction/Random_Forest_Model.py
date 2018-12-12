@@ -1,5 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier
-
+From Forest_Files_Prediction.data_preprocessing import ffp_csf
+From Forest_Files_Prediction.get_feature import ffp_get_feature,ffp_train_test_split
 ### 2 categories
 # Declare the classifier 
 rf2 = RandomForestClassifier(random_state=0, class_weight='balanced')
