@@ -1,3 +1,4 @@
+From Forest_Files_Prediction import data_preprocessing.py
 # Specify the name of the target and features
 target = 'area'
 features = ['temp','RH', 'wind', 'rain', 'FFMC','DMC','DC','ISI']
