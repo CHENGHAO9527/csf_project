@@ -33,3 +33,12 @@ print('Misclassified samples: %d' % (y3_test != y3_pred_mlp).sum())
 print('The accuracy of neural net:', end=' ')
 print(precision_recall_fscore_support(y3_pred_mlp, y3_test, 
                                       average='micro')[0])
+
+
+# 2 categories:
+# Misclassified samples: 82
+# Accuracy: 0.47435897435897434
+
+# 3 categories:
+# Misclassified samples: 75
+# Accuracy: 0.5192307692307693
