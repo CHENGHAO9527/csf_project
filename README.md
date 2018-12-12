@@ -25,6 +25,17 @@ We use Python to analyze the forest fire data. Specific packages used are Numpy,
     from matplotlib.colors import ListedColormap
 
 ---
+### Installation
+Type the following commands in your terminal.
+```
+git clone https://github.com/CHENGHAO9527/csf_project
+
+cd CSF-DATS-6450-FINAL
+
+python3 setup.py install 
+```
+
+---
 ### output:
 
     # 2 categories:
