@@ -1,6 +1,7 @@
 import warnings
 warnings.filterwarnings("ignore")
 import pandas as pd
+import numpy as np
 
 # Load the data
 def ffp_csf():
@@ -13,7 +14,6 @@ def ffp_csf():
     original_df.rename(index=str, columns={"X": "x_coord", "Y": "y_coord"},
     inplace=True)
 
-    import numpy as np
 
     print('Number of rows before removing rows with missing values: ' +
     str(original_df.shape[0]))
@@ -59,3 +59,4 @@ def ffp_csf():
     print('Three Categories: ')
     print(categoryCount3.head())
     return True
+
