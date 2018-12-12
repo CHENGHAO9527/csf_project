@@ -2,6 +2,7 @@
 # Remeber to use the dimensionality-reduced PCA versions of X
 
 ### 2 categories
+
 # Declare the classifier (we have to make a new one since 'mlp' 
 # expects 8 features and plot_decision_regions expects 2)
 mlp2_pca = MLPClassifier(random_state=0, hidden_layer_sizes=200, 
