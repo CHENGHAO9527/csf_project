@@ -9,8 +9,8 @@ We use Python to analyze the forest fire data. Specific packages used are Numpy,
 
 
 ##Feature
-data_preprocessing.py
-get_feature.py
-neural_network.py
-SVM_model.py
-Random_Forest_Model.py
+* data_preprocessing.py
+* get_feature.py
+* neural_network.py
+* SVM_model.py
+* Random_Forest_Model.py
