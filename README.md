@@ -19,10 +19,10 @@ We use Python to analyze the forest fire data. Specific packages used are Numpy,
 ---
 ### Sample Code:
 
-from sklearn.ensemble import RandomForestClassifier
-From Forest_Files_Prediction.data_preprocessing import ffp_csf
-From Forest_Files_Prediction.get_feature import ffp_get_feature,ffp_train_test_split
-from matplotlib.colors import ListedColormap
+    from sklearn.ensemble import RandomForestClassifier
+    From Forest_Files_Prediction.data_preprocessing import ffp_csf
+    From Forest_Files_Prediction.get_feature import ffp_get_feature,ffp_train_test_split
+    from matplotlib.colors import ListedColormap
 
 ---
 ### output:
