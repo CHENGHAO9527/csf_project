@@ -47,6 +47,8 @@ plot_feature_importances(features, importances3)
 # Misclassified samples: 70
 # The accuracy of random forest is: 0.5512820512820513
 
+# We found this code in the course's github page, here:
+# https://github.com/rasbt/python-machine-learning-book-2nd-edition/blob/master/code/ch03/ch03.ipynb
 
 from matplotlib.colors import ListedColormap
 
@@ -109,3 +111,68 @@ def plot_decision_regions(X_in, y_in, classifier, test_idx=None,
     plt.tight_layout()
     plt.show()
 
+
+# visualize the results
+# First use PCA to reduce dimensionality from 8 to 2 so we can plot
+pca = PCA(n_components=2)
+
+### 2 categories
+X2_train_pca = pca.fit_transform(X2_train)
+X2_test_pca = pca.transform(X2_test)
+
+# Declare the classifier (we have to make a new one since 'rf'
+# expects 8 features and plot_decision_regions expects 2)
+rf2_pca = RandomForestClassifier(random_state=0, class_weight='balanced')
+rf2_pca.fit(X2_train_pca, y2_train)
+
+y2_pred_rf2_pca = rf2_pca.predict(X2_test_pca)
+print('Two categories:')
+print('Misclassified samples: %d' % (y2_test != y2_pred_rf2_pca).sum())
+
+# Print the accuracy
+print('The accuracy of random forest is: ' +
+      str(rf2_pca.score(X2_test_pca, y2_test)))
+
+X2_combined = np.vstack((X2_train_pca, X2_test_pca))
+y2_combined = np.hstack((y2_train, y2_test))
+test_start2 = X2_train_pca.shape[0]
+test_end2 = X2_train_pca.shape[0] + X2_test_pca.shape[0]
+
+print(X2_combined.shape)
+plot_decision_regions(X_in=X2_combined, y_in=y2_combined,
+                      classifier=rf2_pca,
+                      test_idx=range(test_start2, test_end2))
+### 3 categories
+X3_train_pca = pca.fit_transform(X3_train)
+X3_test_pca = pca.transform(X3_test)
+
+# Declare the classifier (we have to make a new one since 'rf'
+# expects 8 features and plot_decision_regions expects 2)
+rf3_pca = RandomForestClassifier(random_state=0, class_weight='balanced')
+rf3_pca.fit(X3_train_pca, y3_train)
+
+y3_pred_rf3_pca = rf3_pca.predict(X3_test_pca)
+print('Three categories:')
+print('Misclassified samples: %d' % (y3_test != y3_pred_rf3_pca).sum())
+
+# Print the accuracy
+print('The accuracy of random forest is: ' +
+      str(rf3_pca.score(X3_test_pca, y3_test)))
+
+X3_combined = np.vstack((X3_train_pca, X3_test_pca))
+y3_combined = np.hstack((y3_train, y3_test))
+test_start3 = X3_train_pca.shape[0]
+test_end3 = X3_train_pca.shape[0] + X3_test_pca.shape[0]
+
+print(X3_combined.shape)
+plot_decision_regions(X_in=X3_combined, y_in=y3_combined,
+                      classifier=rf3_pca,
+                      test_idx=range(test_start3, test_end3))
+
+# 2 categories:
+# Misclassified samples: 84
+# The accuracy of random forest is: 0.46153846153846156
+
+# 3 categories:
+# Misclassified samples: 90
+# The accuracy of random forest is: 0.4230769230769231
