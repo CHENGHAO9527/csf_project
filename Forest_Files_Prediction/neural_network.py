@@ -1,44 +1,48 @@
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import precision_recall_fscore_support
+From Forest_Files_Prediction.data_preprocessing import ffp_csf
+From Forest_Files_Prediction.get_feature import ffp_get_feature,ffp_train_test_split
 
 ### Two categories
-# Declare the classifier 
-mlp2 = MLPClassifier(random_state=0, hidden_layer_sizes=200, 
-                    activation='relu')
+# Declare the classifier
+def ffp_nnetwork():
+    mlp2 = MLPClassifier(random_state=0, hidden_layer_sizes=200,
+                        activation='relu')
 
-# Fit the model
-mlp2.fit(X2_train,y2_train)
-y2_pred_mlp = mlp2.predict(X2_test)
-print('Two categories:')
-print('Misclassified samples: %d' % (y2_test != y2_pred_mlp).sum())
+    # Fit the model
+    mlp2.fit(X2_train,y2_train)
+    y2_pred_mlp = mlp2.predict(X2_test)
+    print('Two categories:')
+    print('Misclassified samples: %d' % (y2_test != y2_pred_mlp).sum())
 
-# Print the accuracy
-print('The accuracy of neural net:', end=' ')
-print(precision_recall_fscore_support(y2_pred_mlp, y2_test, 
-                                      average='micro')[0])
+    # Print the accuracy
+    print('The accuracy of neural net:', end=' ')
+    print(precision_recall_fscore_support(y2_pred_mlp, y2_test,
+                                          average='micro')[0])
 
-### Three categories
-# Declare the classifier 
-mlp3 = MLPClassifier(random_state=0, hidden_layer_sizes=200, 
-                    activation='relu')
+    ### Three categories
+    # Declare the classifier
+    mlp3 = MLPClassifier(random_state=0, hidden_layer_sizes=200,
+                        activation='relu')
 
-# Fit the model
-mlp3.fit(X3_train,y3_train)
-y3_pred_mlp = mlp3.predict(X3_test)
-print('')
-print('Three categories:')
-print('Misclassified samples: %d' % (y3_test != y3_pred_mlp).sum())
+    # Fit the model
+    mlp3.fit(X3_train,y3_train)
+    y3_pred_mlp = mlp3.predict(X3_test)
+    print('')
+    print('Three categories:')
+    print('Misclassified samples: %d' % (y3_test != y3_pred_mlp).sum())
 
-# Print the accuracy
-print('The accuracy of neural net:', end=' ')
-print(precision_recall_fscore_support(y3_pred_mlp, y3_test, 
-                                      average='micro')[0])
+    # Print the accuracy
+    print('The accuracy of neural net:', end=' ')
+    print(precision_recall_fscore_support(y3_pred_mlp, y3_test,
+                                          average='micro')[0])
 
 
-# 2 categories:
-# Misclassified samples: 82
-# Accuracy: 0.47435897435897434
+    # 2 categories:
+    # Misclassified samples: 82
+    # Accuracy: 0.47435897435897434
 
-# 3 categories:
-# Misclassified samples: 75
-# Accuracy: 0.5192307692307693
+    # 3 categories:
+    # Misclassified samples: 75
+    # Accuracy: 0.5192307692307693
+    return True
