@@ -15,3 +15,22 @@ We use Python to analyze the forest fire data. Specific packages used are Numpy,
 * neural_network.py
 * SVM_model.py
 * Random_Forest_Model.py
+
+---
+### Sample Code:
+
+from sklearn.ensemble import RandomForestClassifier
+From Forest_Files_Prediction.data_preprocessing import ffp_csf
+From Forest_Files_Prediction.get_feature import ffp_get_feature,ffp_train_test_split
+from matplotlib.colors import ListedColormap
+
+---
+### output:
+
+    # 2 categories:
+    # Misclassified samples: 84
+    # The accuracy of random forest is: 0.46153846153846156
+
+    # 3 categories:
+    # Misclassified samples: 90
+    # The accuracy of random forest is: 0.4230769230769231
