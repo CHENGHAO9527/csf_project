@@ -19,10 +19,11 @@ We use Python to analyze the forest fire data. Specific packages used are Numpy,
 ---
 ### Sample Code:
 
-    from sklearn.ensemble import RandomForestClassifier
-    From Forest_Files_Prediction.data_preprocessing import ffp_csf
-    From Forest_Files_Prediction.get_feature import ffp_get_feature,ffp_train_test_split
-    from matplotlib.colors import ListedColormap
+    X3_combined = np.vstack((X3_train_pca, X3_test_pca))
+    y3_combined = np.hstack((y3_train, y3_test))
+    test_start3 = X3_train_pca.shape[0]
+    test_end3 = X3_train_pca.shape[0] + X3_test_pca.shape[0]
+
 
 ---
 ### Installation
@@ -30,7 +31,7 @@ Type the following commands in your terminal.
 ```
 git clone https://github.com/CHENGHAO9527/csf_project
 
-cd CSF-DATS-6450-FINAL
+cd csf_project
 
 python3 setup.py install 
 ```
