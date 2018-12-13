@@ -19,11 +19,14 @@ We use Python to analyze the forest fire data. Specific packages used are Numpy,
 ---
 ### Sample Code:
 
-    X3_combined = np.vstack((X3_train_pca, X3_test_pca))
-    y3_combined = np.hstack((y3_train, y3_test))
-    test_start3 = X3_train_pca.shape[0]
-    test_end3 = X3_train_pca.shape[0] + X3_test_pca.shape[0]
-
+    def plot_2d_space(X, y, label='Classes', num_cats=2):
+        pca = PCA(n_components=2)
+        twoDX = pca.fit_transform(X)
+        cat_indexes = []
+        cat_indexes.append([index for index in range(len(y)) if y[index] == 1])
+        if num_cats == 3:
+            cat_indexes.append([index for index in range(len(y)) if y[index] == 2])
+        cat_indexes.append([index for index in range(len(y)) if y[index] == 0])
 
 ---
 ### Installation
